@@ -460,3 +460,94 @@ $
 
 paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
 $
+
+======================
+REBASING
+=================================
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git add -A
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git status
+On branch firstbranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   rebasing-file.txt
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git commit -a -m "rebasing"
+[firstbranch db67740] rebasing
+ 1 file changed, 1 insertion(+)
+ create mode 100644 rebasing-file.txt
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ ls
+mygit-allsteps.txt          README.md          RishiVishnoiProfile.pdf
+PranavParanjapeProfile.pdf  rebasing-file.txt
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ ls
+mygit-allsteps.txt  PranavParanjapeProfile.pdf  README.md  RishiVishnoiProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ ls
+mygit-allsteps.txt          README.md          RishiVishnoiProfile.pdf
+PranavParanjapeProfile.pdf  rebasing-file.txt
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git rebase master
+Current branch firstbranch is up to date.
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git rebase firstbranch
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to firstbranch.
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ ls
+mygit-allsteps.txt          README.md          RishiVishnoiProfile.pdf
+PranavParanjapeProfile.pdf  rebasing-file.txt
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+	
