@@ -13,9 +13,25 @@ Pass:- R***123$
  git commit -m "V1.0" test.txt
  git push -u origin master
  
+===============
+NOTES 
+===============
+ git add 'filename' work for adding new file
  
+(git commit -a -m ) also adds but existing files ,To add new file we have to use (git add "filename")
+ 
+ GitStash:- new feature  which has incomplete  code and start again later ,it creates new branch and leaves it thr 
+ 
+==============
 
-------
+ 
+ 
+ 
+ 
+#####################################################################
+Creating First master branch and adding files 
+#####################################################################
+
 paranjape_g@Gautam-PJ MINGW64 /C
 $ cd /c/Users/paranjape_g/AppData/Local/Programs/Git/
 
@@ -119,5 +135,328 @@ paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
 $ git commit -m "V2.0" test.txt
 
 
+#####################################################################
+
+Creating 3 new files in master branch but did not push 
+
+#####################################################################
+
 paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
 $ git push -u origin master
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    test.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        X3172_Gautam_Paranjape.doc
+        X3414_Tushar_Kulkarni.doc
+        X3847_Rishi_Vishnoi.doc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git add -A
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   X3172_Gautam_Paranjape.doc
+        new file:   X3414_Tushar_Kulkarni.doc
+        new file:   X3847_Rishi_Vishnoi.doc
+        deleted:    test.txt
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git commit -a -m "Adding X3172_Gautam_Paranjape.doc,X3414_Tushar_Kulkarni.docX3847_Rishi_Vishnoi.doc"
+[master e9f57ef] Adding X3172_Gautam_Paranjape.doc,X3414_Tushar_Kulkarni.docX3847_Rishi_Vishnoi.doc
+ 4 files changed, 108 deletions(-)
+ create mode 100644 X3172_Gautam_Paranjape.doc
+ create mode 100644 X3414_Tushar_Kulkarni.doc
+ create mode 100644 X3847_Rishi_Vishnoi.doc
+ delete mode 100644 test.txt
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git log
+commit e9f57ef669165993a924a15f0b7a4eaa2329636c (HEAD -> master)
+Author: pknowledge <gautam.paranjape@gmail.com>
+Date:   Thu Dec 6 10:34:06 2018 +0530
+
+    Adding X3172_Gautam_Paranjape.doc,X3414_Tushar_Kulkarni.docX3847_Rishi_Vishnoi.doc
+
+commit e1fef486fc1a3c43f468c81fe47c455d14017bb2 (origin/master, origin/HEAD)
+.
+.
+.
+.
+commit 4bc00e6300ef437066a42ed6019e75a3f0faa674
+Author: gautamparanjape <45648196+gautamparanjape@users.noreply.github.com>
+Date:   Thu Dec 6 09:51:35 2018 +0530
+
+    Initial commit
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+#####################################################################
+
+Creating New Branch  (git branch firstbranch)
+
+#####################################################################
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git branch firstbranch
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git add README.md
+PranavParanjapeProfile.pdf  RishiVishnoiProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git add RishiVishnoiProfile.pdf PranavParanjapeProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git status
+On branch firstbranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   PranavParanjapeProfile.pdf
+        new file:   RishiVishnoiProfile.pdf
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git  commit -m "Added 2 new PDF files in new branch"
+[firstbranch df57b44] Added 2 new PDF files in new branch
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 PranavParanjapeProfile.pdf
+ create mode 100644 RishiVishnoiProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ ls
+mygit-allsteps.txt          RishiVishnoiProfile.pdf     X3847_Rishi_Vishnoi.doc
+PranavParanjapeProfile.pdf  X3172_Gautam_Paranjape.doc
+README.md                   X3414_Tushar_Kulkarni.doc
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$  git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ ls
+mygit-allsteps.txt  X3172_Gautam_Paranjape.doc  X3847_Rishi_Vishnoi.doc
+README.md           X3414_Tushar_Kulkarni.doc
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+#####################################################################
+
+Creating New Branch and now added files to it 
+We are going to deleted new file added and again add 2 new files 
+Push to new Branch
+
+#####################################################################
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git add RishiVishnoiProfile.pdf PranavParanjapeProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git status
+On branch firstbranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   PranavParanjapeProfile.pdf
+        new file:   RishiVishnoiProfile.pdf
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git  commit -m "Added 2 new PDF files in new branch"
+[firstbranch df57b44] Added 2 new PDF files in new branch
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 PranavParanjapeProfile.pdf
+ create mode 100644 RishiVishnoiProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ ls
+mygit-allsteps.txt          RishiVishnoiProfile.pdf     X3847_Rishi_Vishnoi.doc
+PranavParanjapeProfile.pdf  X3172_Gautam_Paranjape.doc
+README.md                   X3414_Tushar_Kulkarni.doc
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git status
+On branch firstbranch
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    X3172_Gautam_Paranjape.doc
+        deleted:    X3414_Tushar_Kulkarni.doc
+        deleted:    X3847_Rishi_Vishnoi.doc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git add -A
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$  git status
+On branch firstbranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    X3172_Gautam_Paranjape.doc
+        deleted:    X3414_Tushar_Kulkarni.doc
+        deleted:    X3847_Rishi_Vishnoi.doc
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git commit -a
+Aborting commit due to empty commit message.
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$  git status
+On branch firstbranch
+nothing to commit, working tree clean
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ git push origin firstbranch
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 228 bytes | 228.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/gautamparanjape/TestGit
+   df57b44..d21b25b  firstbranch -> firstbranch
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ ls
+mygit-allsteps.txt  PranavParanjapeProfile.pdf  README.md  RishiVishnoiProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$
+
+###################################################################################################################
+So currently firstbranch has 
+mygit-allsteps.txt  PranavParanjapeProfile.pdf  README.md  RishiVishnoiProfile.pdf
+
+Master Branch has 
+mygit-allsteps.txt   README.md  (IN GIT HUB GUI)
+
+
+Now MERGING BRANCH: ---------------
+
+
+###################################################################################################################
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$  git checkout master
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ ls
+mygit-allsteps.txt  README.md  X3172_Gautam_Paranjape.doc  X3414_Tushar_Kulkarni.doc  X3847_Rishi_Vishnoi.doc
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ git merge firstbranch
+Updating e9f57ef..d21b25b
+Fast-forward
+ PranavParanjapeProfile.pdf | Bin 0 -> 42099 bytes
+ RishiVishnoiProfile.pdf    | Bin 0 -> 53399 bytes
+ X3172_Gautam_Paranjape.doc | Bin 151552 -> 0 bytes
+ X3414_Tushar_Kulkarni.doc  | Bin 124416 -> 0 bytes
+ X3847_Rishi_Vishnoi.doc    | Bin 151552 -> 0 bytes
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 PranavParanjapeProfile.pdf
+ create mode 100644 RishiVishnoiProfile.pdf
+ delete mode 100644 X3172_Gautam_Paranjape.doc
+ delete mode 100644 X3414_Tushar_Kulkarni.doc
+ delete mode 100644 X3847_Rishi_Vishnoi.doc
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$ ls
+mygit-allsteps.txt  PranavParanjapeProfile.pdf  README.md  RishiVishnoiProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$  git checkout firstbranch
+Switched to branch 'firstbranch'
+M       mygit-allsteps.txt
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$ ls
+mygit-allsteps.txt  PranavParanjapeProfile.pdf  README.md  RishiVishnoiProfile.pdf
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (firstbranch)
+$  git checkout master
+Switched to branch 'master'
+M       mygit-allsteps.txt
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
+
+paranjape_g@Gautam-PJ MINGW64 ~/AppData/Local/Programs/Git/TestGit (master)
+$
